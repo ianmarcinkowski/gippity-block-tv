@@ -41,18 +41,12 @@ def get_image_description(image_path):
                 "type": "text",
                 "text": "Is this image from the content I am interested in watching, or an advertsement?",
             },
-            {
-                "type": "image_url",
-                "image_url": {"url": image_url}
-            },
+            {"type": "image_url", "image_url": {"url": image_url}},
         ],
     }
     payload = {
         "model": "gpt-4-vision-preview",
-        "messages": [
-            system_message,
-            user_message
-        ],
+        "messages": [system_message, user_message],
         "max_tokens": 1000,
     }
     response = requests.post(
